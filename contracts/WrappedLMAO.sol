@@ -18,7 +18,7 @@ contract WrappedLMAO is ERC20 {
         LmaoToken.transferFrom(msg.sender, address(this), amount);
     }
 
-    function withdraw(uint256 amount) public {
+    function withdraw(uint256 amount) public payable {
         require(amount > 0, "Amount must be greater than 0");
         require(LmaoToken.balanceOf(msg.sender) >= amount, "Insufficient balance");
         _burn(msg.sender, amount);

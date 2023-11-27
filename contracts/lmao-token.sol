@@ -5,8 +5,8 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract LMAOTOKEN is ERC20 {
     address[] public addressFees;
-    uint256 public feePercentage = 8;
-    address public owner;
+    uint256 private constant FEE_PERCENTAGE = 8;
+    address private owner;
 
     constructor() ERC20("LMAOTOKEN", "LMAO") {
         owner = msg.sender;
