@@ -4,10 +4,11 @@ pragma solidity 0.8.19;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract LMAOTOKEN is ERC20 {
+
+    address private owner;
     address[] public addressFees;
     uint256 private constant FEE_PERCENTAGE = 8;
-    address private owner;
-
+    
     constructor() ERC20("LMAOTOKEN", "LMAO") {
         owner = msg.sender;
         _mint(msg.sender, 10000e18);
